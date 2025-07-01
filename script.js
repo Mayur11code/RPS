@@ -57,8 +57,7 @@ function playround(hc,cc){
         humanScore+=1;
     }
     else{
-     alert("false value detected, RETRY
-        ")
+     alert("false value detected, RETRY")
      round-=1;
     }
     
