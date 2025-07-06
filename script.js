@@ -82,7 +82,7 @@ function playround(hc, cc) {
         // return "humanwins";
     }
     else {
-        alert("false value detected, RETRY");
+        // alert("false value detected, RETRY");
         round -= 1;
     }
 
