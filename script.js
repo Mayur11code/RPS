@@ -42,42 +42,51 @@ let round = 0;
 function playround(hc, cc) {
     // console.log(hc,cc);
 
-
+  
     // REVISIT BLOCK
     const msg = document.querySelector("p")
-    if (msg) div.removeChild(msg)
+    if (msg) div.removeChild(msg) 
+        
+        
+        
+    const om = document.querySelector("#om")   
+    if (om) div.removeChild(om)
     // REVISIT BLOCK
 
 
+    const lol = document.createElement("div")
+    lol.setAttribute("id","om")
 
-    if (hc == cc) { console.log("ITS A TIE DAMN ") }
+
+    if (hc == cc) {  lol.textContent ="ITS A TIE DAMN " }
     else if (hc[0] == "R" && cc[0] == "P") {
         computerScore += 1;
-        console.log("THAT BOT WINS THIS ONE LOL")
+        
+         lol.textContent =("THAT BOT WINS THIS ONE LOL")
         // return "botwins"
     }
     else if (hc[0] == "R" && cc[0] == "S") {
         humanScore += 1;
-        console.log("YOU WIN");
+         lol.textContent =("YOU WIN");
         // return "humanwins"
     }
     else if (hc[0] == "P" && cc[0] == "R") {
         humanScore += 1;
-        console.log("YOU WIN");
+        lol.textContent =("YOU WIN");
         // return "botwins"
     }
     else if (hc[0] == "P" && cc[0] == "S") {
         computerScore += 1;
-        console.log("BOT WINS");
+         lol.textContent =("BOT WINS");
         // return "botwins"
     }
     else if (hc[0] == "S" && cc[0] == "R") {
-        console.log("COMPUTER WINS");
+         lol.textContent =("COMPUTER WINS");
         computerScore += 1;
         // return "botwins"
     }
     else if (hc[0] == "S" && cc[0] == "P") {
-        console.log("YOU WIN THIS ONE ");
+        lol.textContent =("YOU WIN THIS ONE ");
         humanScore += 1;
         // return "humanwins";
     }
@@ -86,7 +95,7 @@ function playround(hc, cc) {
         round -= 1;
     }
 
-
+    div.appendChild(lol)
 
 
 }
@@ -147,6 +156,11 @@ btn2.setAttribute("id", "btn2")
 btn3.setAttribute("id", "btn3")
 
 
+btn1.setAttribute("style", "margin :20px")
+btn2.setAttribute("style", "margin :20px")
+btn3.setAttribute("style", "margin :20px")
+
+
 
 btn1.textContent = "ROCK";
 btn2.textContent = "PAPER";
@@ -193,19 +207,23 @@ div.addEventListener("click", (e) => {
             BOT SCORE :${computerScore}`
     if (humanScore == 5) {
         const msg = document.createElement("p")
-        msg.textContent = "YOU WON UNFORTUNATELY"
+        msg.textContent = "YOU WON UNFORTUNATELY, CLICK TO RESTART THE GAME"
         div.appendChild(msg)
         humanScore = 0;
         computerScore = 0;
+        const om = document.querySelector("#om")   
+        if (om) div.removeChild(om)
 
     }
     if (computerScore == 5) {
         console.log("BOT WINS, click to play again")
         const msg = document.createElement("p")
-        msg.textContent = "THAT ROBOT WON NOOB"
+        msg.textContent = "THAT ROBOT WON NOOB, CLICK ANYWHERE TO RESTART THE GAME"
         div.appendChild(msg)
         computerScore = 0;
         humanScore = 0;
+        const om = document.querySelector("#om")   
+        if (om) div.removeChild(om)
 
     }
 
