@@ -42,51 +42,53 @@ let round = 0;
 function playround(hc, cc) {
     // console.log(hc,cc);
 
-  
+
     // REVISIT BLOCK
     const msg = document.querySelector("p")
-    if (msg) div.removeChild(msg) 
-        
-        
-        
-    const om = document.querySelector("#om")   
+    if (msg) div.removeChild(msg)
+
+
+
+    const om = document.querySelector("#om")
     if (om) div.removeChild(om)
     // REVISIT BLOCK
 
 
     const lol = document.createElement("div")
-    lol.setAttribute("id","om")
+    lol.setAttribute("id", "om")
+    if (h = "") {
+        return
+    }
 
-
-    if (hc == cc) {  lol.textContent ="ITS A TIE DAMN " }
+    if (hc == cc) { lol.textContent = "ITS A TIE DAMN " }
     else if (hc[0] == "R" && cc[0] == "P") {
         computerScore += 1;
-        
-         lol.textContent =("THAT BOT WINS THIS ONE LOL")
+
+        lol.textContent = ("THAT BOT WINS THIS ONE LOL")
         // return "botwins"
     }
     else if (hc[0] == "R" && cc[0] == "S") {
         humanScore += 1;
-         lol.textContent =("YOU WIN");
+        lol.textContent = ("YOU WIN");
         // return "humanwins"
     }
     else if (hc[0] == "P" && cc[0] == "R") {
         humanScore += 1;
-        lol.textContent =("YOU WIN");
+        lol.textContent = ("YOU WIN");
         // return "botwins"
     }
     else if (hc[0] == "P" && cc[0] == "S") {
         computerScore += 1;
-         lol.textContent =("BOT WINS");
+        lol.textContent = ("BOT WINS");
         // return "botwins"
     }
     else if (hc[0] == "S" && cc[0] == "R") {
-         lol.textContent =("COMPUTER WINS");
+        lol.textContent = ("COMPUTER WINS");
         computerScore += 1;
         // return "botwins"
     }
     else if (hc[0] == "S" && cc[0] == "P") {
-        lol.textContent =("YOU WIN THIS ONE ");
+        lol.textContent = ("YOU WIN THIS ONE ");
         humanScore += 1;
         // return "humanwins";
     }
@@ -94,6 +96,8 @@ function playround(hc, cc) {
         // alert("false value detected, RETRY");
         round -= 1;
     }
+
+
 
     div.appendChild(lol)
 
@@ -164,7 +168,7 @@ btn3.setAttribute("style", "margin :20px")
 
 btn1.textContent = "ROCK";
 btn2.textContent = "PAPER";
-btn3.textContent = "SCISSOR" ;
+btn3.textContent = "SCISSOR";
 
 
 // const button = document.querySelectorAll(".button");
@@ -185,7 +189,7 @@ btn3.textContent = "SCISSOR" ;
 div.addEventListener("click", (e) => {
     // console.log(e.target)
     // console.log(e.target.id)
-   
+
     switch (e.target.id) {
         case "btn1":
             h = "ROCK"
@@ -197,6 +201,9 @@ div.addEventListener("click", (e) => {
 
         case "btn3":
             h = "SCISSOR"
+            break;
+        case "":
+            h = "avoid"
             break;
     }
 
@@ -211,7 +218,7 @@ div.addEventListener("click", (e) => {
         div.appendChild(msg)
         humanScore = 0;
         computerScore = 0;
-        const om = document.querySelector("#om")   
+        const om = document.querySelector("#om")
         if (om) div.removeChild(om)
 
     }
@@ -222,7 +229,7 @@ div.addEventListener("click", (e) => {
         div.appendChild(msg)
         computerScore = 0;
         humanScore = 0;
-        const om = document.querySelector("#om")   
+        const om = document.querySelector("#om")
         if (om) div.removeChild(om)
 
     }
