@@ -164,7 +164,7 @@ btn3.setAttribute("style", "margin :20px")
 
 btn1.textContent = "ROCK";
 btn2.textContent = "PAPER";
-btn3.textContent = "SCISSOR";
+btn3.textContent = "SCISSOR" ;
 
 
 // const button = document.querySelectorAll(".button");
